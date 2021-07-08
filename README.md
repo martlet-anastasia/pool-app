@@ -1,1 +1,3 @@
-# pool-app
+# App to store group names in a table format
+
+It's a simple app to store group of names with corresponding ID. New groups can be added by `Create group` button at the bottom of the main page. _Create group page_ expects user to enter a new group name. `Edit` button inside each table entity helps to change the name of the already exits group. Button `Delete` deletes the entry of the table _(not implemented yet)_.
