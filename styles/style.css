@@ -23,7 +23,7 @@ body {
 
 .app {
     max-width: 1440px;
-    min-height: 100vh;
+    max-height: 100vh;
     margin: 0 auto;
     background: url('../images/blue_wave.png') center bottom no-repeat;
 }
@@ -40,9 +40,13 @@ body {
 .heading {
     margin-bottom: 64px;
     padding-top: 64px;
+    position: sticky;
+    top: 0;
+    background: #ffffff;
 }
 
 .heading__title {
+    position: relative;
     font-size: 29px;
     letter-spacing: 0.025em;
     text-align: left;
@@ -149,6 +153,12 @@ body {
     font-size: 12px;
 }
 
+.table__item-full-name::before {
+    content: '\269B';
+    padding-right: 10px;
+    font-size: 16px;
+}
+
 .table__buttons-group {
     margin-right: 14px;
 }
@@ -156,7 +166,8 @@ body {
 .table__button {
     height: 26px;
     margin-right: 6px;
-    padding: 0 10px 0 10px;
+    padding: 6px 10px 6px 10px;
+    display: inline-block;
     font-size: 12px;
     text-transform: uppercase;
     color: #243659;
@@ -164,6 +175,17 @@ body {
     border: 1px solid #24365928;
     border-radius: 4px;
 }
+
+.table__button:hover {
+    color: #898989;
+    background: #fdfdfd;
+}
+
+.table__button:active {
+    color: #F5F5F5;
+    background: #c5d6ff;
+}
+
 
 .footer {
     padding: 14px 0 256px 0;
@@ -173,9 +195,60 @@ body {
 .footer__button {
     width: 250px;
     padding: 18px 0 18px 0;
+    display: block;
     font-size: 12px;
+    text-align: center;
     text-transform: uppercase;
+    color: #000000;
     background: #F5F5F5;
     border-style: none;
     border-radius: 5px;
+}
+
+.footer__button:hover {
+    color: #898989;
+    background: #fdfdfd;
+}
+
+.footer__button:active {
+    color: #F5F5F5;
+    background: #d8d8d8;
+}
+
+.burger-menu {
+    display: none;
+    width: 25px;
+    height: 3px;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: #3d3d3d;
+}
+
+.burger-menu::before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    transform: translateY(-200%);
+    background: #3d3d3d;
+}
+
+.burger-menu::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    transform: translateY(200%);
+    background: #3d3d3d;
+}
+
+@media (max-width: 768px) {
+    .burger-menu {
+        display: block;
+    }
+
+    .heading__title {
+        display: none;
+    }
 }
